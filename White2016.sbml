@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version3" level="2" version="3">
+  <model id="base">
+    <listOfCompartments>
+      <compartment id="cell" size="1" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="EGF" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="NGF" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="freeEGFReceptor" compartment="cell" boundaryCondition="false"/>
+      <species id="boundEGFReceptor" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="freeNGFReceptor" compartment="cell" boundaryCondition="false"/>
+      <species id="boundNGFReceptor" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="SosInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="SosActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="P90RskInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="P90RskActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RasInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="RasActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RasGapActive" compartment="cell" boundaryCondition="false"/>
+      <species id="Raf1Inactive" compartment="cell" boundaryCondition="false"/>
+      <species id="Raf1Active" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="BRafInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="BRafActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="MekInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="MekActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="ErkInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="ErkActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="PI3KInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="PI3KActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="AktInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="AktActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="C3GInactive" compartment="cell" boundaryCondition="false"/>
+      <species id="C3GActive" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="Rap1Inactive" compartment="cell" boundaryCondition="false"/>
+      <species id="Rap1Active" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RapGapActive" compartment="cell" boundaryCondition="false"/>
+      <species id="PP2AActive" compartment="cell" boundaryCondition="false"/>
+      <species id="Raf1PPtase" compartment="cell" boundaryCondition="false"/>
+      <species id="RasPI3K" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="Raf1PPtaseRaf1" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="BRafMek" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="boundNGFReceptorC3G" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="P90RskSos" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="Raf1PPtaseBRaf" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RasGapRas" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="ErkP90Rsk" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RasRaf1" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="MekErk" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="RapGapRap1" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="AktRaf1" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="C3GRap1" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="Raf1Mek" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="SosRas" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="boundEGFReceptorPI3K" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="boundEGFReceptorSos" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="boundNGFReceptorSos" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="Rap1BRaf" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="PP2AMek" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="PP2AErk" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+      <species id="PI3KAkt" compartment="cell" initialConcentration="0" boundaryCondition="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="RasGapTotal" value="1" constant="true"/>
+      <parameter id="RapGapTotal" value="1" constant="true"/>
+      <parameter id="PP2ATotal" value="1" constant="true"/>
+      <parameter id="Raf1PPtaseTotal" value="1" constant="true"/>
+      <parameter id="EGF_IC" value="1" constant="true"/>
+      <parameter id="NGF_IC" value="1" constant="true"/>
+      <parameter id="Total_EGFReceptor" value="1" constant="true"/>
+      <parameter id="Total_NGFReceptor" value="1" constant="true"/>
+      <parameter id="Total_Sos" value="1" constant="true"/>
+      <parameter id="Total_P90Rsk" value="1" constant="true"/>
+      <parameter id="Total_Ras" value="1" constant="true"/>
+      <parameter id="Total_Raf1" value="1" constant="true"/>
+      <parameter id="Total_BRaf" value="1" constant="true"/>
+      <parameter id="Total_Mek" value="1" constant="true"/>
+      <parameter id="Total_Erk" value="1" constant="true"/>
+      <parameter id="Total_PI3K" value="1" constant="true"/>
+      <parameter id="Total_Akt" value="1" constant="true"/>
+      <parameter id="Total_C3G" value="1" constant="true"/>
+      <parameter id="Total_Rap1" value="1" constant="true"/>
+      <parameter id="k00f" value="1" constant="true"/>
+      <parameter id="k00b" value="1" constant="true"/>
+      <parameter id="k01f" value="1" constant="true"/>
+      <parameter id="k01b" value="1" constant="true"/>
+      <parameter id="k02f" value="1" constant="true"/>
+      <parameter id="k02b" value="1" constant="true"/>
+      <parameter id="k03f" value="1" constant="true"/>
+      <parameter id="k04f" value="1" constant="true"/>
+      <parameter id="k04b" value="1" constant="true"/>
+      <parameter id="k05f" value="1" constant="true"/>
+      <parameter id="k06f" value="1" constant="true"/>
+      <parameter id="k06b" value="1" constant="true"/>
+      <parameter id="k07f" value="1" constant="true"/>
+      <parameter id="k08f" value="1" constant="true"/>
+      <parameter id="k08b" value="1" constant="true"/>
+      <parameter id="k09f" value="1" constant="true"/>
+      <parameter id="k10f" value="1" constant="true"/>
+      <parameter id="k10b" value="1" constant="true"/>
+      <parameter id="k11f" value="1" constant="true"/>
+      <parameter id="k12f" value="1" constant="true"/>
+      <parameter id="k12b" value="1" constant="true"/>
+      <parameter id="k13f" value="1" constant="true"/>
+      <parameter id="k14f" value="1" constant="true"/>
+      <parameter id="k14b" value="1" constant="true"/>
+      <parameter id="k15f" value="1" constant="true"/>
+      <parameter id="k16f" value="1" constant="true"/>
+      <parameter id="k16b" value="1" constant="true"/>
+      <parameter id="k17f" value="1" constant="true"/>
+      <parameter id="k18f" value="1" constant="true"/>
+      <parameter id="k18b" value="1" constant="true"/>
+      <parameter id="k19f" value="1" constant="true"/>
+      <parameter id="k20f" value="1" constant="true"/>
+      <parameter id="k20b" value="1" constant="true"/>
+      <parameter id="k21f" value="1" constant="true"/>
+      <parameter id="k22f" value="1" constant="true"/>
+      <parameter id="k22b" value="1" constant="true"/>
+      <parameter id="k23f" value="1" constant="true"/>
+      <parameter id="k24f" value="1" constant="true"/>
+      <parameter id="k24b" value="1" constant="true"/>
+      <parameter id="k25f" value="1" constant="true"/>
+      <parameter id="k26f" value="1" constant="true"/>
+      <parameter id="k26b" value="1" constant="true"/>
+      <parameter id="k27f" value="1" constant="true"/>
+      <parameter id="k28f" value="1" constant="true"/>
+      <parameter id="k28b" value="1" constant="true"/>
+      <parameter id="k29f" value="1" constant="true"/>
+      <parameter id="k30f" value="1" constant="true"/>
+      <parameter id="k30b" value="1" constant="true"/>
+      <parameter id="k31f" value="1" constant="true"/>
+      <parameter id="k42f" value="1" constant="true"/>
+      <parameter id="k42b" value="1" constant="true"/>
+      <parameter id="k43f" value="1" constant="true"/>
+      <parameter id="k44f" value="1" constant="true"/>
+      <parameter id="k44b" value="1" constant="true"/>
+      <parameter id="k45f" value="1" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="EGFBindingReaction">
+        <listOfReactants>
+          <speciesReference species="EGF" stoichiometry="1"/>
+          <speciesReference species="freeEGFReceptor" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k00f </ci>
+              <ci> EGF </ci>
+              <ci> freeEGFReceptor </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="EGFUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="EGF" stoichiometry="1"/>
+          <speciesReference species="freeEGFReceptor" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k00b </ci>
+              <ci> boundEGFReceptor </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="NGFBindingReaction">
+        <listOfReactants>
+          <speciesReference species="NGF" stoichiometry="1"/>
+          <speciesReference species="freeNGFReceptor" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k01f </ci>
+              <ci> NGF </ci>
+              <ci> freeNGFReceptor </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="NGFUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="NGF" stoichiometry="1"/>
+          <speciesReference species="freeNGFReceptor" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k01b </ci>
+              <ci> boundNGFReceptor </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundEGFReceptorSosBindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptorSos" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k02f </ci>
+              <ci> boundEGFReceptor </ci>
+              <ci> SosInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundEGFReceptorSosUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptorSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k02b </ci>
+              <ci> boundEGFReceptorSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="SosActivationByEGFReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptorSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k03f </ci>
+              <ci> boundEGFReceptorSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundNGFReceptorSosBindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptorSos" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k04f </ci>
+              <ci> boundNGFReceptor </ci>
+              <ci> SosInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundNGFReceptorSosUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptorSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k04b </ci>
+              <ci> boundNGFReceptorSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="SosActivationByNGFReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptorSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k05f </ci>
+              <ci> boundNGFReceptorSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="P90RskSosBindingReaction">
+        <listOfReactants>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+          <speciesReference species="P90RskActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="P90RskSos" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k06f </ci>
+              <ci> P90RskActive </ci>
+              <ci> SosActive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="P90RskSosUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="P90RskSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+          <speciesReference species="P90RskActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k06b </ci>
+              <ci> P90RskSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="SosInactivationByP90RskReaction">
+        <listOfReactants>
+          <speciesReference species="P90RskSos" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SosInactive" stoichiometry="1"/>
+          <speciesReference species="P90RskActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k07f </ci>
+              <ci> P90RskSos </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ErkP90RskBindingReaction">
+        <listOfReactants>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+          <speciesReference species="P90RskInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ErkP90Rsk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k08f </ci>
+              <ci> ErkActive </ci>
+              <ci> P90RskInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ErkP90RskUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="ErkP90Rsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+          <speciesReference species="P90RskInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k08b </ci>
+              <ci> ErkP90Rsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="P90RskActivationByErkReaction">
+        <listOfReactants>
+          <speciesReference species="ErkP90Rsk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+          <speciesReference species="P90RskActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k09f </ci>
+              <ci> ErkP90Rsk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="SosRasBindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasInactive" stoichiometry="1"/>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="SosRas" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k10f </ci>
+              <ci> SosActive </ci>
+              <ci> RasInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="SosRasUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="SosRas" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasInactive" stoichiometry="1"/>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k10b </ci>
+              <ci> SosRas </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasActivationBySosReaction">
+        <listOfReactants>
+          <speciesReference species="SosRas" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+          <speciesReference species="SosActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k11f </ci>
+              <ci> SosRas </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasGapRasBindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasGapActive" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasGapRas" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k12f </ci>
+              <ci> RasGapActive </ci>
+              <ci> RasActive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasGapRasUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasGapRas" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasGapActive" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k12b </ci>
+              <ci> RasGapRas </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasInactivationByRasGapReaction">
+        <listOfReactants>
+          <speciesReference species="RasGapRas" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasGapActive" stoichiometry="1"/>
+          <speciesReference species="RasInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k13f </ci>
+              <ci> RasGapRas </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasRaf1BindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Inactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasRaf1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k14f </ci>
+              <ci> RasActive </ci>
+              <ci> Raf1Inactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasRaf1UnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Inactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k14b </ci>
+              <ci> RasRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1ActivationByRasReaction">
+        <listOfReactants>
+          <speciesReference species="RasRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k15f </ci>
+              <ci> RasRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1PPtaseRaf1BindingReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1PPtaseRaf1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k16f </ci>
+              <ci> Raf1PPtase </ci>
+              <ci> Raf1Active </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1PPtaseRaf1UnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtaseRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k16b </ci>
+              <ci> Raf1PPtaseRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1InactivationByRaf1PPtaseReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtaseRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+          <speciesReference species="Raf1Inactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k17f </ci>
+              <ci> Raf1PPtaseRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="AktRaf1BindingReaction">
+        <listOfReactants>
+          <speciesReference species="AktActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AktRaf1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k18f </ci>
+              <ci> AktActive </ci>
+              <ci> Raf1Active </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="AktRaf1UnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="AktRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AktActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k18b </ci>
+              <ci> AktRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1InactivationByAktReaction">
+        <listOfReactants>
+          <speciesReference species="AktRaf1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="AktActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Inactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k19f </ci>
+              <ci> AktRaf1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rap1BRafBindingReaction">
+        <listOfReactants>
+          <speciesReference species="BRafInactive" stoichiometry="1"/>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rap1BRaf" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k20f </ci>
+              <ci> Rap1Active </ci>
+              <ci> BRafInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rap1BRafUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="Rap1BRaf" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BRafInactive" stoichiometry="1"/>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k20b </ci>
+              <ci> Rap1BRaf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="BRafActivationByRap1Reaction">
+        <listOfReactants>
+          <speciesReference species="Rap1BRaf" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k21f </ci>
+              <ci> Rap1BRaf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1PPtaseBRafBindingReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1PPtaseBRaf" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k22f </ci>
+              <ci> Raf1PPtase </ci>
+              <ci> BRafActive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1PPtaseBRafUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtaseBRaf" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k22b </ci>
+              <ci> Raf1PPtaseBRaf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="BRafInactivationByRaf1PPtaseReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1PPtaseBRaf" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BRafInactive" stoichiometry="1"/>
+          <speciesReference species="Raf1PPtase" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k23f </ci>
+              <ci> Raf1PPtaseBRaf </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1MekBindingReaction">
+        <listOfReactants>
+          <speciesReference species="MekInactive" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Raf1Mek" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k24f </ci>
+              <ci> Raf1Active </ci>
+              <ci> MekInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Raf1MekUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="Raf1Mek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekInactive" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k24b </ci>
+              <ci> Raf1Mek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MekActivationByRaf1Reaction">
+        <listOfReactants>
+          <speciesReference species="Raf1Mek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="Raf1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k25f </ci>
+              <ci> Raf1Mek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="BRafMekBindingReaction">
+        <listOfReactants>
+          <speciesReference species="MekInactive" stoichiometry="1"/>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="BRafMek" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k26f </ci>
+              <ci> BRafActive </ci>
+              <ci> MekInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="BRafMekUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="BRafMek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekInactive" stoichiometry="1"/>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k26b </ci>
+              <ci> BRafMek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MekActivationByBRafReaction">
+        <listOfReactants>
+          <speciesReference species="BRafMek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="BRafActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k27f </ci>
+              <ci> BRafMek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PP2AMekBindingReaction">
+        <listOfReactants>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PP2AMek" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k28f </ci>
+              <ci> PP2AActive </ci>
+              <ci> MekActive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PP2AMekUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="PP2AMek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k28b </ci>
+              <ci> PP2AMek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MekInactivationByPP2AReaction">
+        <listOfReactants>
+          <speciesReference species="PP2AMek" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekInactive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k29f </ci>
+              <ci> PP2AMek </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MekErkBindingReaction">
+        <listOfReactants>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="ErkInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekErk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k30f </ci>
+              <ci> MekActive </ci>
+              <ci> ErkInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="MekErkUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="MekErk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="ErkInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k30b </ci>
+              <ci> MekErk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ErkActivationByMekReaction">
+        <listOfReactants>
+          <speciesReference species="MekErk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="MekActive" stoichiometry="1"/>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k31f </ci>
+              <ci> MekErk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PP2AErkBindingReaction">
+        <listOfReactants>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PP2AErk" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k32f </ci>
+              <ci> PP2AActive </ci>
+              <ci> ErkActive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PP2AErkUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="PP2AErk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ErkActive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k32b </ci>
+              <ci> PP2AErk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="ErkInactivationByPP2AReaction">
+        <listOfReactants>
+          <speciesReference species="PP2AErk" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="ErkInactive" stoichiometry="1"/>
+          <speciesReference species="PP2AActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k33f </ci>
+              <ci> PP2AErk </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundEGFReceptorPI3KBindingReaction">
+        <listOfReactants>
+          <speciesReference species="PI3KInactive" stoichiometry="1"/>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptorPI3K" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k34f </ci>
+              <ci> boundEGFReceptor </ci>
+              <ci> PI3KInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundEGFReceptorPI3KUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptorPI3K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KInactive" stoichiometry="1"/>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k34b </ci>
+              <ci> boundEGFReceptorPI3K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PI3KActivationByEGFReaction">
+        <listOfReactants>
+          <speciesReference species="boundEGFReceptorPI3K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundEGFReceptor" stoichiometry="1"/>
+          <speciesReference species="PI3KActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k35f </ci>
+              <ci> boundEGFReceptorPI3K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasPI3KBindingReaction">
+        <listOfReactants>
+          <speciesReference species="PI3KInactive" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RasPI3K" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k36f </ci>
+              <ci> RasActive </ci>
+              <ci> PI3KInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RasPI3KUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="RasPI3K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KInactive" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k36b </ci>
+              <ci> RasPI3K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PI3KActivationByRasReaction">
+        <listOfReactants>
+          <speciesReference species="RasPI3K" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KActive" stoichiometry="1"/>
+          <speciesReference species="RasActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k37f </ci>
+              <ci> RasPI3K </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PI3KAktBindingReaction">
+        <listOfReactants>
+          <speciesReference species="PI3KActive" stoichiometry="1"/>
+          <speciesReference species="AktInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KAkt" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k38f </ci>
+              <ci> PI3KActive </ci>
+              <ci> AktInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="PI3KAktUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="PI3KAkt" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KActive" stoichiometry="1"/>
+          <speciesReference species="AktInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k38b </ci>
+              <ci> PI3KAkt </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="AktActivationByPI3KReaction">
+        <listOfReactants>
+          <speciesReference species="PI3KAkt" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="PI3KActive" stoichiometry="1"/>
+          <speciesReference species="AktActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k39f </ci>
+              <ci> PI3KAkt </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundNGFReceptorC3GBindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="C3GInactive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptorC3G" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k40f </ci>
+              <ci> boundNGFReceptor </ci>
+              <ci> C3GInactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="boundNGFReceptorC3GUnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptorC3G" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="C3GInactive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k40b </ci>
+              <ci> boundNGFReceptorC3G </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="C3GActivationByNGFReaction">
+        <listOfReactants>
+          <speciesReference species="boundNGFReceptorC3G" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="boundNGFReceptor" stoichiometry="1"/>
+          <speciesReference species="C3GActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k41f </ci>
+              <ci> boundNGFReceptorC3G </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="C3GRap1BindingReaction">
+        <listOfReactants>
+          <speciesReference species="Rap1Inactive" stoichiometry="1"/>
+          <speciesReference species="C3GActive" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="C3GRap1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k42f </ci>
+              <ci> C3GActive </ci>
+              <ci> Rap1Inactive </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="C3GRap1UnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="C3GRap1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rap1Inactive" stoichiometry="1"/>
+          <speciesReference species="C3GActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k42b </ci>
+              <ci> C3GRap1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rap1ActivationByC3GReaction">
+        <listOfReactants>
+          <speciesReference species="C3GRap1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+          <speciesReference species="C3GActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k43f </ci>
+              <ci> C3GRap1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RapGapRap1BindingReaction">
+        <listOfReactants>
+          <speciesReference species="RapGapActive" stoichiometry="1"/>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RapGapRap1" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k44f </ci>
+              <ci> RapGapActive </ci>
+              <ci> Rap1Active </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="RapGapRap1UnbindingReaction">
+        <listOfReactants>
+          <speciesReference species="RapGapRap1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="RapGapActive" stoichiometry="1"/>
+          <speciesReference species="Rap1Active" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k44b </ci>
+              <ci> RapGapRap1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="Rap1InactivationByRapGapReaction">
+        <listOfReactants>
+          <speciesReference species="RapGapRap1" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="Rap1Inactive" stoichiometry="1"/>
+          <speciesReference species="RapGapActive" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> k45f </ci>
+              <ci> RapGapRap1 </ci>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
